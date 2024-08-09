@@ -15,7 +15,7 @@ const NavbarMenu = [
 
 const Navbar = () => {
     return (
-        <div className='bg-brandDark text-white flex py-7 font-poppins'>
+        <div className=' bg-brandDark text-white flex py-7 font-poppins'>
             <motion.nav 
             intial = {{opacity: 0}} 
             animate={{opacity: 1}}

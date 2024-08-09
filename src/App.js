@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar';
+import { UpdateFollower } from 'react-mouse-follower';
+import Hero from './components/Hero/Hero';
+import Services from './components/Services/Services';
+import Banner from './components/Banner/Banner';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className='overflow-x-hidden'>
+      <UpdateFollower 
+        mouseOptions={{
+          backgroundColor: "White", 
+          zIndex: 999,
+          followSpeed: 1.7,
+          // scale: 5,
+        }}>
+      <Navbar />
+      <Hero />
+      </UpdateFollower>
+      <UpdateFollower
+        mouseOptions={{
+          backgroundColor: "pink",
+          zIndex: 999,
+          followSpeed: 1.7,
+          // scale: 5,
+        }}>
+      <Services/>
+      <Banner />
+      </UpdateFollower>
+    </main>
   );
 }
 
