@@ -20,7 +20,7 @@ const fadeUp = (delay) => {
             y: 0,
             scale: 1,
             transition: {
-                duration: 0.5,
+                duration: 0.8,
                 delay: delay,
                 ease: easeInOut,
             },
@@ -30,7 +30,7 @@ const fadeUp = (delay) => {
             y: 50,
             scale: 0.5,
             transition: {
-                duration: 0.5,
+                duration: 0.8,
                 ease: easeInOut,
             },
         },
@@ -82,8 +82,8 @@ const Hero = () => {
                 }}> */}
                 <div className='container grid grid-cols-1 md:grid-cols-2 min-h-[200px]'>
                     {/* Headphone info */}
-                    <div className='flex flex-col justify-center py-10 md:py-0 xl:max-w-[500px] '>
-                        <div className='space-y-2 text-center md:text-left pb-15'>
+                    <div className='flex flex-col justify-start md:justify-center py-10 xl:max-w-[500px]'>
+                        <div className='space-y-2 text-justify md:text-left pb-15'>
                             {/* Headphone title */}
                             <AnimatePresence mode='wait'>
                                 <UpdateFollower mouseOptions={{
@@ -96,7 +96,7 @@ const Hero = () => {
                                 }}>
                                     <motion.h1
                                         key={activeData.id}
-                                        variants={fadeUp(0.2)}
+                                        variants={fadeUp(0.4)}
                                         initial="hidden"
                                         animate="show"
                                         exit="exit"
@@ -106,7 +106,7 @@ const Hero = () => {
                             <AnimatePresence mode='wait'>
                                 <motion.p
                                     key={activeData.id}
-                                    variants={fadeUp(0.1)}
+                                    variants={fadeUp(0.3)}
                                     initial="hidden"
                                     animate="show"
                                     exit="exit"
@@ -128,7 +128,7 @@ const Hero = () => {
                                 }}>
                                     <motion.button
                                         key={activeData.id}
-                                        variants={fadeUp(0.1)}
+                                        variants={fadeUp(0.3)}
                                         initial="hidden"
                                         animate="show"
                                         exit="exit"
@@ -136,14 +136,14 @@ const Hero = () => {
                                 </UpdateFollower>
                             </AnimatePresence>
                             {/* Hero List separator */}
-                            <div className=' flex items-center justify-center md:justify-start gap-3 !mt-20'>
+                            <div className=' flex items-center justify-start     md:justify-start gap-3 !mt-20'>
                                 <p className='uppercase text-sm'>Top in the class headphones for you!</p>
                                 <div className='w-20 h-[1px] bg-white'></div>
                             </div>
                             {/* Colors */}
                         </div>
                         {/* Headphone List Switcher */}
-                        <div className='flex flex-wrap grid grid-cols-3 gap-10'>
+                        <div className='grid grid-cols-3 gap-6 md:gap-10'>
                             {HeadphoneData.map((item) => {
                                 return (
                                     <UpdateFollower mouseOptions={{
@@ -162,7 +162,7 @@ const Hero = () => {
                                         // ),
                                     }}>
                                         <div onClick={() => handleActiveData(item)} className=' grid grid-cols-2 place-items-center cursor-pointer'>
-                                            <div className='pt-2 pb-3'>
+                                            <div className='pt-2 pb-3 mr-1'>
                                                 <img src={item.image} alt="" className='w-{200px}' />
                                             </div>
                                             <div className='space-y-3'>
@@ -182,16 +182,18 @@ const Hero = () => {
                                 key={activeData.id}
                                 initial={{ opacity: 0, scale: 0.8, y: 100 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.2, ease: easeInOut }}
+                                transition={{ duration: 0.7, delay: 0.6, ease: easeInOut }}
                                 exit={{ opacity: 0, scale: 0.9, y: 100, transition: { duration: 0.4 } }}
                                 src={activeData.image} alt='' className='h-[320px] md:w-[280px] xl:w-[350px] pb-4' />
                         </AnimatePresence>
                     </div>
                     {/* Whatsapp icon */}
                     <div className='text-3xl text-white fixed bottom-10 right-10 hover:rotate-[360deg] duration-500 z-[99999] mix-blend-difference'>
-                        <a href={`https://wa.me/7387776883`} target="_blank" rel="noopener noreferrer">
-                            <FaWhatsapp />
-                        </a>
+                    <a href={`https://wa.me/917387776883`} target="_blank" rel="noopener noreferrer">
+                        <span className="text-green-500">
+                        <FaWhatsapp />
+                        </span>
+                    </a>
                     </div>
                 </div>
                 {/* </UpdateFollower> */}

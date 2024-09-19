@@ -1,5 +1,7 @@
 import React from 'react';
 import headphone4 from "../../Images/headphone4.png";
+import {motion} from "framer-motion";
+import { UpdateFollower } from 'react-mouse-follower';
 
 const Banner = () => {
   return (
@@ -9,14 +11,21 @@ const Banner = () => {
         {/* <div className='text-center'></div> */}
 
         {/* Banner Image */}
-        <div>
-            <img src={headphone4} alt='' className='w-[200px] md:w-[400px]'/>
+        <div className='flex flex-row justify-center'>
+            <motion.img 
+            initial = {{opacity: 1, x: 0, rotate: -180}}
+            animate={{ opacity: 1, x: 0, rotate: 0}}
+            transition={{duration: 1.0, delay: 0.8, ease: "easeInOut"}}
+            alt = ""
+            src={headphone4} alt='' className='w-[200px] md:w-[400px] md:h-[250px]'/>
         </div>
 
         {/* Banner Text Info */}
-        <div>
-            <div>
-                <h1>Latest Headphones with the latest technology</h1>
+        <div className='flex flex-col justify-center text-justify md:text-left ml-1 pr-2'>
+            <div className='space-y-3 lg:max-w-[450px] text-center md:text-left'>
+                <h1 className='text-3xl font-semibold font-gotham pb-5 md:pb-3'>Latest Headphones With The Latest Technology</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button className='p-2 border-2 border-[#434141] rounded-md hover:bg-[#434141] hover:text-white'>Shop Now</button>
             </div>
         </div>
         </div>

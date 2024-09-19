@@ -23,8 +23,8 @@ const Navbar = () => {
             className="container flex justify-between items-center">
                 {/* Logo */}
                 <div>
-                    <a href='#' className='text-xl font-bold uppercase'>
-                        Muffled / <span className='text-md font-light text-white'>Music</span>
+                    <a href='#' className='text-xl font-bold uppercase justify-center ml-2'>
+                        Muffled / <span className='justify-center   text-md font-light text-white'>Music</span>
                     </a>
                 </div>
 
@@ -40,7 +40,7 @@ const Navbar = () => {
                             scale: 5,
                             mixBlendMode: "difference",
                             }}>
-                            <a href={item.link} className='inline-block text-sm py-2 px-3 uppercase'>{item.title}</a>
+                            <a href={item.link} className='inline-block text-sm py-2 px-3 ml-2 uppercase'>{item.title}</a>
                             </UpdateFollower>
                             </li>
                         ))}
